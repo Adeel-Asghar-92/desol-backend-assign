@@ -2,18 +2,11 @@ import { Request, Response } from "express";
 import { StatusCodes, ReasonPhrases } from "http-status-codes";
 import winston from "winston";
 
-import {
-  SignInPayload,
-} from "../contracts/auth";
-import {
-  userService,
-} from "../services";
+import { SignInPayload } from "../contracts/auth";
+import { userService } from "../services";
 import { jwtSign } from "../utils/jwt";
-import {
-  IBodyRequest,
-} from "../contracts/request";
+import { IBodyRequest } from "../contracts/request";
 import { createHash } from "../utils/hash";
-
 
 export const authController = {
   signIn: async ({ body: { email, password } }: Request, res: Response) => {
@@ -46,9 +39,7 @@ export const authController = {
   },
 
   signUp: async (
-    {
-      body: { email,  password },
-    }: IBodyRequest<any>,
+    { body: { email, password } }: IBodyRequest<any>,
     res: Response
   ) => {
     try {
@@ -63,7 +54,6 @@ export const authController = {
 
       const hashedPassword = await createHash(password);
       const user = await userService.create({
-       
         email,
         password: hashedPassword,
       });
@@ -82,6 +72,4 @@ export const authController = {
       });
     }
   },
-
-
 };

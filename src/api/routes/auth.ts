@@ -11,8 +11,7 @@ const auth = (router: Router): void => {
   console.log(router);
 
   router.post("/auth/sign-in", authValidation.signIn, authController.signIn);
-
+  router.post("/auth/sign-up", authController.signUp);
 };
-
 
 export default auth;
