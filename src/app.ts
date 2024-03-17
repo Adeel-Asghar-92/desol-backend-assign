@@ -26,10 +26,7 @@ async function startServer() {
     app.listen(config.port, () => {
       Logger.info(`
       	Running Node Server for ${process.env.NODE_ENV}	|⚡️
-        Version: ${process.env.VERSION}                    |⚡️
         Ready now on port: ${config.port}             |⚡️
-        Author: ${process.env.AUTHOR}           |⚡️
-        Hire Me: ${process.env.AUTHOR_URL}  |⚡️
       ; 
 
     `);

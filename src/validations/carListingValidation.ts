@@ -18,7 +18,7 @@ export const carListingValidation = {
       // Validate the type of each field
       if (
         typeof model !== "string" ||
-        typeof price !== "number" ||
+        typeof price !== "string" ||
         typeof phoneNumber !== "string" ||
         typeof city !== "string" ||
         !Array.isArray(images)

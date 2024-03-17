@@ -4,14 +4,16 @@ import cors from "cors";
 import methodOverride from "method-override";
 import { router } from "../api";
 import config from "../config";
-// import PDF_FILE_PATH from "../pdf/ISO-9001";
+
 import fs from "fs";
 
 export default ({ app }: { app: express.Application }) => {
   /**
    * API Status Check !!
    */
+
   app.use(express.json({ limit: "10mb" })); // Adjust the limit as needed
+
   app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
   app.get("/status", (req, res) => {

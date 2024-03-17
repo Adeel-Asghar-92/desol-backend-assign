@@ -12,6 +12,8 @@ const carListing = (router: Router): void => {
     carListingValidation.validateCarListing,
     carListingController.upload
   );
+
+  router.post("/carListing/imageupload", carListingController.imageUpload);
 };
 
 export default carListing;

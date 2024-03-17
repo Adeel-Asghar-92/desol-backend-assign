@@ -3,7 +3,7 @@ import { Model, ObjectId } from "mongoose";
 export interface ICarListing {
   userId: ObjectId;
   model: String;
-  price: Number;
+  price: String;
   phoneNumber: String;
   city: String;
   images: [String];

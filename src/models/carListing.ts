@@ -10,7 +10,7 @@ const schema = new Schema<ICarListing>(
       ref: "User",
     },
     model: String,
-    price: Number,
+    price: String,
     phoneNumber: String,
     city: String,
     images: [String],

@@ -4,6 +4,8 @@ import winston from "winston";
 
 import { IBodyRequest } from "../contracts/request";
 import { carListingService } from "../services/carLisitngServices";
+const bodyParser = require("body-parser");
+const { pathToFileURL } = require("url");
 
 export const carListingController = {
   upload: async (
@@ -34,4 +36,5 @@ export const carListingController = {
       });
     }
   },
+  imageUpload: async (req: any, res: Response) => {},
 };
