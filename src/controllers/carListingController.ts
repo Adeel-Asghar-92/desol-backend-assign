@@ -44,7 +44,7 @@ export const carListingController = {
     }
 
     const fileUrls = uploadedFiles.map((file) => {
-      return `${req.protocol}://${req.get("host")}/${file.filename}`;
+      return `/uploads/${file.filename}`;
     });
 
     // const data = await uploadMediaServices(files);
