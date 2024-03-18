@@ -36,5 +36,21 @@ export const carListingController = {
       });
     }
   },
-  imageUpload: async (req: any, res: Response) => {},
+  imageUpload: async (req: any, res: Response) => {
+    const files = req.files;
+    const uploadedFiles = req.files;
+    if (!uploadedFiles || uploadedFiles.length === 0) {
+      return res.status(400).send("No files were uploaded.");
+    }
+
+    const fileUrls = uploadedFiles.map((file) => {
+      return `${req.protocol}://${req.get("host")}/${file.filename}`;
+    });
+
+    // const data = await uploadMediaServices(files);
+    res.status(200).json({
+      message: "Media Uploaded Successfully",
+      media: fileUrls,
+    });
+  },
 };

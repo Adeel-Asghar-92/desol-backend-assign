@@ -1,2 +1,3 @@
 import { authenticate } from "./authMiddlewares";
-export { authenticate };
+import { uploadMultipleImages } from "./uploadMultipleFiles";
+export { authenticate, uploadMultipleImages };

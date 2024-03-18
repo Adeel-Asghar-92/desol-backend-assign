@@ -1,4 +1,4 @@
-import { authenticate } from "../middlewares"; // Import your authentication middleware
+import { authenticate, uploadMultipleImages } from "../middlewares"; // Import your authentication middleware
 import { Router } from "express";
 
 import { carListingValidation } from "../../validations/carListingValidation";
@@ -13,7 +13,11 @@ const carListing = (router: Router): void => {
     carListingController.upload
   );
 
-  // router.post("/carListing/imageupload", carListingController.imageUpload);
+  router.post(
+    "/carListing/imageupload",
+    uploadMultipleImages,
+    carListingController.imageUpload
+  );
 };
 
 export default carListing;
