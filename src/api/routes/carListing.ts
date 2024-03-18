@@ -13,7 +13,7 @@ const carListing = (router: Router): void => {
     carListingController.upload
   );
 
-  router.post("/carListing/imageupload", carListingController.imageUpload);
+  // router.post("/carListing/imageupload", carListingController.imageUpload);
 };
 
 export default carListing;
