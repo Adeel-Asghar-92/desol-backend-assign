@@ -2,7 +2,7 @@ const multer = require("multer");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "/uploads/"); // Destination folder for storing files
+    cb(__dirname, "src/uploads/"); // Destination folder for storing files
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + "-" + file.originalname); // File name (use a unique identifier)
